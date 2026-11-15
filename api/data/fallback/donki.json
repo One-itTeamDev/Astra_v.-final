@@ -1,0 +1,30 @@
+{
+  "_note": "Eventos reais do DONKI (NASA CCMC), guardados para o sistema funcionar sem internet. Fonte: https://kauai.ccmc.gsfc.nasa.gov/DONKI/ . Ao arrancar com internet, a API substitui-os pelos dados ao vivo.",
+  "SEP": [
+    {"sepID": "2026-07-30T18:45:00-SEP-001", "eventTime": "2026-07-30T18:45Z", "instruments": [{"displayName": "GOES-P: SEISS >10 MeV"}],
+     "linkedEvents": [{"activityID": "2026-07-30T15:53:00-FLR-001"}, {"activityID": "2026-07-30T16:53:00-CME-001"}],
+     "note": "O fluxo de protões >10 MeV do GOES voltou a cruzar 10 pfu a 2026-07-31T13:20Z, no mesmo evento.",
+     "link": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/SEP/47879/2"},
+    {"sepID": "2026-01-18T22:55:00-SEP-001", "eventTime": "2026-01-18T22:55Z", "instruments": [{"displayName": "GOES-P: SEISS >10 MeV"}],
+     "linkedEvents": [{"activityID": "2026-01-18T17:27:00-FLR-001"}, {"activityID": "2026-01-18T18:09:00-CME-001"}, {"activityID": "2026-01-19T11:09:00-FLR-001"}, {"activityID": "2026-01-19T18:55:00-IPS-001"}],
+     "note": "", "link": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/SEP/44041/1"},
+    {"sepID": "2024-03-15T20:29:00-SEP-001", "eventTime": "2024-03-15T20:29Z", "instruments": [{"displayName": "SOHO: COSTEP 15.8-39.8 MeV"}],
+     "linkedEvents": [{"activityID": "2024-03-15T02:10:00-CME-001"}],
+     "note": "Associado à erupção de longa duração C4.9 com pico a 2024-03-15T03:57Z.", "link": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/SEP/29606/2"},
+    {"sepID": "2023-07-28T23:50:00-SEP-001", "eventTime": "2023-07-28T23:50Z", "instruments": [{"displayName": "GOES-P: SEISS >10 MeV"}],
+     "linkedEvents": [{"activityID": "2023-07-28T15:39:00-FLR-001"}, {"activityID": "2023-07-28T15:53:00-CME-001"}],
+     "note": "Os protões >10 MeV ultrapassaram 100 pfu a 2023-07-29T05:30Z.", "link": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/SEP/26231/3"},
+    {"sepID": "2023-05-09T22:52:00-SEP-001", "eventTime": "2023-05-09T22:52Z", "instruments": [{"displayName": "SOHO: COSTEP 28.2-50.1 MeV"}],
+     "linkedEvents": [{"activityID": "2023-05-07T23:12:00-CME-001"}, {"activityID": "2023-05-09T18:20:00-FLR-001"}, {"activityID": "2023-05-09T19:00:00-CME-001"}, {"activityID": "2023-05-09T20:32:00-FLR-001"}, {"activityID": "2023-05-09T22:06:00-IPS-001"}],
+     "note": "", "link": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/SEP/25069/2"}
+  ],
+  "FLR": [
+    {"flrID": "2026-07-30T15:53:00-FLR-001", "beginTime": "2026-07-30T15:53Z", "peakTime": null, "classType": "M1.9"},
+    {"flrID": "2026-01-19T11:09:00-FLR-001", "beginTime": "2026-01-19T11:09Z", "peakTime": null, "classType": "M1.1"},
+    {"flrID": "2026-01-18T17:27:00-FLR-001", "beginTime": "2026-01-18T17:27Z", "peakTime": null, "classType": "X1.9"},
+    {"flrID": "2023-07-28T15:39:00-FLR-001", "beginTime": "2023-07-28T15:39Z", "peakTime": null, "classType": "M4.1"},
+    {"flrID": "2023-05-09T20:32:00-FLR-001", "beginTime": "2023-05-09T20:32Z", "peakTime": null, "classType": "M5.0"},
+    {"flrID": "2023-05-09T18:20:00-FLR-001", "beginTime": "2023-05-09T18:20Z", "peakTime": null, "classType": "M4.2"}
+  ],
+  "GST": []
+}

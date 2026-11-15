@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt" translate="no">
+<head>
+<meta name="google" content="notranslate"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-en-title="ASTRA">ASTRA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/ui.css">
+<style>
+  body{min-height:100vh;margin:0;background:radial-gradient(1000px 600px at 50% -10%,#14233A,transparent 70%),#060A12}
+  .wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:36px;padding:32px 16px}
+  .brandmark{color:#fff;font:700 22px/1 var(--display);letter-spacing:.2em}
+  .brandmark svg{width:30px;height:30px}
+  .go{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:100%;max-width:760px}
+  .go a{display:flex;align-items:center;gap:18px;text-decoration:none;color:var(--ink);border-radius:18px;padding:26px;border:1px solid var(--rule2);background:var(--sheet)}
+  .go a:hover{border-color:var(--c);background:color-mix(in srgb,var(--c) 6%,var(--sheet))}
+  .go a:focus-visible{outline:2px solid var(--c);outline-offset:3px}
+  .go .ic{width:52px;height:52px;flex:none;border-radius:14px;display:grid;place-items:center;color:var(--c);background:color-mix(in srgb,var(--c) 13%,transparent);border:1px solid color-mix(in srgb,var(--c) 30%,transparent)}
+  .go .ic .ico{width:26px;height:26px}
+  .go b{flex:1;font:600 22px/1.2 var(--display);color:#fff;letter-spacing:-.015em}
+  .go .arr{color:var(--c)}
+  @media(max-width:640px){.go{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="ui">
+<div class="lang-float" id="langSlot"></div>
+<div class="wrap">
+  <span class="brandmark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6.5" fill="currentColor"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(-24 16 16)"/><circle cx="28.4" cy="10.4" r="2.1" fill="#E8A33D"/></svg>ASTRA</span>
+  <div class="go">
+    <a href="/tablet/" target="_blank" style="--c:#6CC4FF">
+      <span class="ic" data-ic="heart"></span>
+      <b data-en="Crew tablet">Tablet do tripulante</b>
+      <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+    <a href="/consola/" target="_blank" style="--c:#E8A33D">
+      <span class="ic" data-ic="grid"></span>
+      <b data-en="Mission console">Consola de missão</b>
+      <svg class="arr" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </div>
+</div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/common.js"></script>
+<script>
+  document.querySelectorAll('[data-ic]').forEach(e => { e.innerHTML = icon(e.dataset.ic); });
+  document.getElementById('langSlot').innerHTML = langToggle();
+  applyLang();
+</script>
+</body>
+</html>

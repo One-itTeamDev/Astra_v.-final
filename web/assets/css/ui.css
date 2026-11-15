@@ -1,0 +1,91 @@
+/* =====================================================================
+   ASTRA v2 — tema de instrumento de missão. Aplica-se dentro de .ui
+   (página inicial, consola e tablet depois da entrada). Os ecrãs de
+   entrada ficam com o estilo de base.css.
+   ===================================================================== */
+.ui{
+  --paper:#060A12; --sheet:#0D1421; --raised2:#121B2B; --cabine:#18233A;
+  --ink:#E6EBF2; --head:#FFFFFF; --muted:#8693A8; --dim:#5D6A80;
+  --rule:rgba(146,170,214,.11); --rule2:rgba(146,170,214,.2); --line:var(--rule);
+  --blue:#6CC4FF; --blue2:#3E8EF7; --sinal:#6CC4FF; --pulso:#6CC4FF;
+  --ok:#3DD68C; --warn:#F7B538; --crit:#FF5F5F; --brand:#E8A33D;
+  --ok-soft:rgba(61,214,140,.1); --warn-soft:rgba(247,181,56,.12); --crit-soft:rgba(255,95,95,.13); --blue-soft:rgba(108,196,255,.11);
+  --monitor:#03070D; --trace:#3DD68C; --navy:rgba(8,13,22,.78);
+  --display:'Space Grotesk','Inter',system-ui,sans-serif;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,'Cascadia Mono',monospace;
+  --r:14px; --shadow:0 1px 0 rgba(255,255,255,.035) inset,0 18px 40px -22px rgba(0,0,0,.8);
+  font-family:var(--sans);color:var(--ink);letter-spacing:-.003em;
+  font-feature-settings:"cv11","ss01","tnum";
+}
+.ui h1,.ui h2,.ui h3{font-family:var(--display);letter-spacing:-.015em;font-weight:600}
+.ui ::selection{background:rgba(108,196,255,.3)}
+.ui ::-webkit-scrollbar{width:10px;height:10px}
+.ui ::-webkit-scrollbar-thumb{background:rgba(146,170,214,.18);border-radius:10px;border:3px solid transparent;background-clip:content-box}
+.ui ::-webkit-scrollbar-thumb:hover{background-color:rgba(146,170,214,.32)}
+.ui ::-webkit-scrollbar-track{background:transparent}
+.ui .mono{font-family:var(--mono);font-size:.92em;letter-spacing:-.01em}
+.ui .num{font-family:var(--display);font-weight:600;letter-spacing:-.02em}
+.ui input,.ui select,.ui textarea{background:rgba(3,7,13,.55);border:1px solid var(--rule2);border-radius:10px;padding:11px 13px;transition:border-color .15s,box-shadow .15s}
+.ui input:hover,.ui select:hover,.ui textarea:hover{border-color:rgba(146,170,214,.32)}
+.ui input:focus,.ui select:focus,.ui textarea:focus{outline:0;border-color:var(--blue);box-shadow:0 0 0 3px rgba(108,196,255,.18)}
+.ui button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.ui .card{background:linear-gradient(180deg,rgba(255,255,255,.022),rgba(255,255,255,0) 60%),var(--sheet);border:1px solid var(--rule);border-radius:var(--r);box-shadow:var(--shadow)}
+.ui .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--rule2);background:rgba(255,255,255,.03);border-radius:10px;padding:9px 16px;min-height:40px;font-size:14.5px;font-weight:500;color:var(--ink);transition:background .15s,border-color .15s,transform .1s,box-shadow .15s}
+.ui .btn:hover{background:rgba(255,255,255,.07);border-color:rgba(146,170,214,.34)}
+.ui .btn:active{transform:translateY(1px)}
+.ui .btn.pri{background:linear-gradient(180deg,#8ED3FF,#55B4F7);border-color:transparent;color:#03111F;font-weight:600;box-shadow:0 6px 18px -8px rgba(108,196,255,.7),inset 0 1px 0 rgba(255,255,255,.45)}
+.ui .btn.pri:hover{background:linear-gradient(180deg,#A6DCFF,#6CC4FF)}
+.ui .btn.warnb{background:linear-gradient(180deg,#FFCB5C,#F2A71C);border-color:transparent;color:#1C1100;box-shadow:0 6px 18px -8px rgba(247,181,56,.7)}
+.ui .btn.critb{background:linear-gradient(180deg,#FF7C7C,#F04A4A);border-color:transparent;color:#1F0303;box-shadow:0 6px 18px -8px rgba(255,95,95,.7)}
+.ui .btn.ghost{background:transparent;border-color:transparent;color:var(--blue)}
+.ui .btn.ghost:hover{background:var(--blue-soft)}
+.ui .btn.sm{min-height:32px;padding:5px 12px;font-size:13.5px;border-radius:8px}
+.ui .btn[disabled]{opacity:.4;box-shadow:none}
+.ui .tag{gap:6px;font-size:12.5px;font-weight:500;padding:3px 10px;border-radius:999px;background:rgba(146,170,214,.1);color:#B4C0D2;border:1px solid transparent}
+.ui .tag.live,.ui .tag.ok,.ui .tag.warn,.ui .tag.crit{border-color:color-mix(in srgb,currentColor 28%,transparent)}
+.ui .tag.live{background:var(--blue-soft);color:var(--blue)}
+.ui .tag.ok{background:var(--ok-soft);color:var(--ok)}
+.ui .tag.warn{background:var(--warn-soft);color:var(--warn)}
+.ui .tag.crit{background:var(--crit-soft);color:var(--crit)}
+.ui .tag.live::before,.ui .tag.ok::before,.ui .tag.warn::before,.ui .tag.crit::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 22%,transparent)}
+.ui .lvl::before{width:8px;height:8px;border-radius:50%;box-shadow:0 0 0 3px color-mix(in srgb,currentColor 20%,transparent)}
+.ui .prov,.ui .valid{font-size:11.5px;font-weight:600;border-radius:999px;padding:2px 9px;letter-spacing:.01em}
+.ui .prov{background:var(--warn-soft);color:var(--warn)}
+.ui .valid{background:var(--ok-soft);color:var(--ok)}
+.ui .av{border-radius:8px;font-family:var(--display);font-weight:700;letter-spacing:.03em}
+.ui .seg{border:1px solid var(--rule2);border-radius:10px;padding:3px;gap:3px;background:rgba(3,7,13,.5)}
+.ui .seg button{border:0;border-radius:7px;background:transparent;color:var(--muted);padding:7px 8px;font-size:13px;font-weight:500;transition:background .15s,color .15s}
+.ui .seg button:hover{color:var(--ink);background:rgba(255,255,255,.04)}
+.ui .seg button.on{background:var(--raised2);color:var(--head);box-shadow:0 1px 0 rgba(255,255,255,.06) inset,0 2px 8px rgba(0,0,0,.4)}
+.ui .tabs{gap:4px;border-bottom:1px solid var(--rule)}
+.ui .tabs button{padding:10px 16px;font-weight:500;border-bottom-width:2px;transition:color .15s}
+.ui .tabs button:hover{color:var(--ink)}
+.ui .tabs button.on{border-bottom-color:var(--blue);color:var(--head)}
+.ui .quote{border-left:2px solid var(--blue);background:var(--blue-soft);border-radius:0 10px 10px 0;padding:10px 14px}
+.ui .hr{background:var(--rule)}
+.ui .empty{display:flex;align-items:center;gap:10px;color:var(--dim);padding:18px 0}
+.ui .empty::before{content:"";width:16px;height:16px;flex:none;border-radius:50%;border:1.5px dashed var(--dim)}
+.ui .xbtn{border-radius:10px;transition:background .15s,color .15s}
+.ui .xbtn:hover{background:rgba(255,255,255,.07);color:var(--head)}
+.ui h2 .ico,.ui h3 .ico{color:var(--blue)}
+.ui .fine{color:var(--muted);font-size:13.5px}
+.ui .kv{gap:9px 20px;font-size:14.5px}
+.ui .kv b{font-weight:500;color:var(--head)}
+.ui .dots i{background:var(--blue)}
+/* modal */
+.modal.ui{background:rgba(2,5,10,.72);backdrop-filter:blur(6px)}
+.modal.ui .mbox{background:linear-gradient(180deg,rgba(255,255,255,.03),transparent 120px),var(--sheet);border:1px solid var(--rule2);border-radius:20px;padding:28px 30px;box-shadow:0 40px 90px -30px rgba(0,0,0,.9);animation:rise .22s ease-out}
+.modal.ui h3{font-size:15px;margin:16px 0 8px;color:var(--head)}
+/* avisos */
+.ui .toast,.toasts.ui .toast{background:rgba(18,27,43,.95);color:var(--ink);border:1px solid var(--rule2);border-left:3px solid var(--blue);border-radius:12px;padding:12px 16px;line-height:1.45;backdrop-filter:blur(8px);box-shadow:0 18px 40px -16px rgba(0,0,0,.8);animation:rise .2s ease-out}
+.ui .toast.warn,.toasts.ui .toast.warn{border-left-color:var(--warn);background:rgba(46,34,10,.96)}
+.ui .toast.crit,.toasts.ui .toast.crit{border-left-color:var(--crit);background:rgba(60,14,14,.96)}
+@keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+/* selector de idioma (também nos ecrãs de entrada, por isso sem depender de .ui) */
+.lang{display:inline-flex;padding:3px;gap:2px;border-radius:999px;border:1px solid rgba(146,170,214,.22);background:rgba(3,7,13,.45)}
+.lang button{border:0;background:transparent;color:#8693A8;font:600 11.5px/1 'Inter',system-ui,sans-serif;letter-spacing:.06em;padding:6px 10px;border-radius:999px;transition:background .15s,color .15s}
+.lang button:hover{color:#E6EBF2}
+.lang button.on{background:#E6EBF2;color:#060A12}
+.lang-float{position:fixed;top:16px;right:16px;z-index:300}

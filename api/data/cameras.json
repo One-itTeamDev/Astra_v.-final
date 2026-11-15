@@ -1,0 +1,44 @@
+{
+  "_note": "Câmaras da consola. As imagens são fotografias reais da NASA Image and Video Library (images-api.nasa.gov) e da câmara EPIC do satélite DSCOVR. Pode trocar os nasa_id por outros; a API descarrega e guarda-os em cache.",
+  "cameras": [
+    {
+      "id": "cam1",
+      "code": "CAM 01",
+      "name": "Destiny, laboratório",
+      "nasa_ids": [
+        "iss068e022293"
+      ],
+      "query": "Destiny laboratory interior ambient light",
+      "fallback_caption": "Interior do laboratório Destiny à noite, com luz ambiente (ISS, 14 nov 2022)"
+    },
+    {
+      "id": "cam2",
+      "code": "CAM 02",
+      "name": "Destiny, vista geral",
+      "nasa_ids": [
+        "iss058e004610",
+        "s98e5113"
+      ],
+      "query": "view of the Destiny US Laboratory",
+      "fallback_caption": "Vista do laboratório Destiny (ISS)"
+    },
+    {
+      "id": "cam3",
+      "code": "CAM 03",
+      "name": "Orion, módulo da tripulação",
+      "nasa_ids": [
+        "jsc2022e044973"
+      ],
+      "query": "Orion medium fidelity mockup interior",
+      "fallback_caption": "Interior da maqueta do módulo Orion (JSC, 11 mai 2016)"
+    },
+    {
+      "id": "cam4",
+      "code": "CAM 04",
+      "name": "Exterior, Terra (DSCOVR/EPIC)",
+      "epic": true,
+      "fallback_caption": "Imagem mais recente da Terra pela câmara EPIC (NASA/NOAA DSCOVR)"
+    }
+  ],
+  "people_filter": "astronaut|cosmonaut|crew ?member|flight engineer|commander|engineer|technician|works|poses|portrait|smiles|holds|Expedition \\d+ crew"
+}

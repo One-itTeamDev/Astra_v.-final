@@ -1,0 +1,232 @@
+{
+  "_source": "NASA Human Research Program — The Human Body in Space / Five Hazards of Human Spaceflight: https://www.nasa.gov/hrp/hazards",
+  "_note": "Os cinco perigos organizam o ASTRA: cada indicador pertence a um perigo. Os textos 'nasa' resumem a página oficial; os 'facts' têm a fonte indicada.",
+  "hazards": [
+    {
+      "id": "radiacao",
+      "letter": "R",
+      "name": "Radiação espacial",
+      "nasa": "Invisível e considerada pela NASA um dos aspectos mais perigosos do voo espacial. Fora da magnetosfera, a tripulação está exposta a raios cósmicos galácticos contínuos e a eventos de partículas solares intermitentes.",
+      "facts": [
+        {
+          "text": "Cruzeiro Terra–Marte: 1,84 mSv/dia de raios cósmicos",
+          "source": "Zeitlin et al., Science 2013 (MSL/RAD)",
+          "text_en": "Earth–Mars cruise: 1.84 mSv/day of cosmic rays"
+        },
+        {
+          "text": "Limite de carreira: 600 mSv",
+          "source": "NASA-STD-3001 Vol. 1",
+          "text_en": "Career limit: 600 mSv"
+        },
+        {
+          "text": "Tempestade de radiação S1 a partir de 10 pfu (protões ≥10 MeV)",
+          "source": "NOAA SWPC",
+          "text_en": "S1 radiation storm from 10 pfu (protons ≥10 MeV)"
+        }
+      ],
+      "indicators": [
+        "Eventos SEP (NASA DONKI)",
+        "Fluxo de protões GOES (NOAA)",
+        "Dose estimada e acumulada"
+      ],
+      "actions": [
+        "Ir para o abrigo de tempestade durante um SEP",
+        "Adiar saídas ao exterior",
+        "Vigiar sinais de defesas em baixo (febre, cansaço)"
+      ],
+      "name_en": "Space radiation",
+      "nasa_en": "Invisible, and considered by NASA one of the most dangerous aspects of spaceflight. Outside the magnetosphere the crew is exposed to continuous galactic cosmic rays and intermittent solar particle events.",
+      "indicators_en": [
+        "SEP events (NASA DONKI)",
+        "GOES proton flux (NOAA)",
+        "Estimated and cumulative dose"
+      ],
+      "actions_en": [
+        "Go to the storm shelter during an SEP",
+        "Postpone EVAs",
+        "Watch for signs of weakened immunity (fever, fatigue)"
+      ]
+    },
+    {
+      "id": "isolamento",
+      "letter": "I",
+      "name": "Isolamento e confinamento",
+      "nasa": "Tripulações pequenas vivem isoladas e confinadas durante meses ou anos. Têm de ser bem escolhidas, treinadas e apoiadas para trabalharem como equipa.",
+      "facts": [
+        {
+          "text": "Sono, humor e stress são os primeiros sinais de desgaste comportamental",
+          "source": "NASA HRP — Risk of Adverse Cognitive or Behavioral Conditions",
+          "text_en": "Sleep, mood and stress are the first signs of behavioural strain"
+        }
+      ],
+      "indicators": [
+        "Humor (registo diário)",
+        "Stress (registo diário)",
+        "Horas de sono"
+      ],
+      "actions": [
+        "Manter o horário de sono e a luz da cabine em modo âmbar à noite",
+        "Conversa privada com a família ou a psicóloga de voo",
+        "Refeições em conjunto com a tripulação"
+      ],
+      "name_en": "Isolation and confinement",
+      "nasa_en": "Small crews live isolated and confined for months or years. They must be well selected, trained and supported to work as a team.",
+      "indicators_en": [
+        "Mood (daily log)",
+        "Stress (daily log)",
+        "Hours of sleep"
+      ],
+      "actions_en": [
+        "Keep the sleep schedule and amber cabin light at night",
+        "Private call with family or the flight psychologist",
+        "Share meals with the crew"
+      ]
+    },
+    {
+      "id": "distancia",
+      "letter": "D",
+      "name": "Distância da Terra",
+      "nasa": "Marte está em média a cerca de 140 milhões de milhas. Uma missão dura cerca de três anos, contra três dias até à Lua. Mantimentos, instruções e cuidados médicos ficam mais difíceis de obter: o planeamento e a autonomia são essenciais.",
+      "facts": [
+        {
+          "text": "Atraso de comunicação Terra–Marte: 4 a 24 min em cada sentido",
+          "source": "Documentação ASTRA, secção 1",
+          "text_en": "Earth–Mars communication delay: 4 to 24 min each way"
+        },
+        {
+          "text": "Mais distância = tripulação mais independente do controlo da missão",
+          "source": "NASA — Human Health and Performance (NTRS 20230015521)",
+          "text_en": "More distance = a crew more independent from mission control"
+        }
+      ],
+      "indicators": [
+        "Estado da ligação",
+        "Atraso das mensagens",
+        "Pacotes na fila",
+        "Decisões tomadas a bordo à espera da Terra"
+      ],
+      "actions": [
+        "Seguir a orientação de bordo enquanto a Terra não responde",
+        "Usar o kit médico e os procedimentos de bordo",
+        "Registar tudo: a Terra revê quando a mensagem chegar"
+      ],
+      "name_en": "Distance from Earth",
+      "nasa_en": "Mars is on average about 140 million miles away. A mission lasts about three years, versus three days to the Moon. Supplies, instructions and medical care are harder to get: planning and autonomy are essential.",
+      "indicators_en": [
+        "Link status",
+        "Message delay",
+        "Packets in queue",
+        "On-board decisions awaiting Earth"
+      ],
+      "actions_en": [
+        "Follow on-board guidance while Earth has not replied",
+        "Use the medical kit and on-board procedures",
+        "Log everything: Earth reviews it when the message arrives"
+      ]
+    },
+    {
+      "id": "gravidade",
+      "letter": "G",
+      "name": "Gravidade alterada",
+      "nasa": "Músculos, ossos, ouvido interno e órgãos têm de se adaptar a cada nova gravidade. Em Marte, a tripulação viveria e trabalharia com três oitavos da gravidade da Terra até dois anos, e teria de se readaptar à Terra no regresso.",
+      "facts": [
+        {
+          "text": "Perda óssea de 1–1,5 % por mês nos ossos que suportam peso",
+          "source": "NASA HRP — Risk of Early Onset Osteoporosis",
+          "text_en": "Bone loss of 1–1.5 % per month in weight-bearing bones"
+        },
+        {
+          "text": "Na ISS, cerca de 2 h de exercício por dia (ARED, passadeira T2, bicicleta CEVIS)",
+          "source": "NASA — Exercising in Space",
+          "text_en": "On the ISS, about 2 h of exercise per day (ARED, T2 treadmill, CEVIS cycle)"
+        }
+      ],
+      "indicators": [
+        "Minutos de exercício (24 h)",
+        "Força de preensão (dinamómetro)",
+        "Tremor e tempo de reacção (alterações funcionais)"
+      ],
+      "actions": [
+        "Cumprir o exercício resistivo e aeróbico do dia",
+        "Repetir a força de preensão uma vez por semana",
+        "Avisar se houver tonturas ou alterações da visão"
+      ],
+      "name_en": "Altered gravity",
+      "nasa_en": "Muscles, bones, inner ear and organs must adapt to every new gravity field. On Mars the crew would live and work at three-eighths of Earth gravity for up to two years, then readapt to Earth on return.",
+      "indicators_en": [
+        "Exercise minutes (24 h)",
+        "Grip strength (dynamometer)",
+        "Tremor and reaction time (functional changes)"
+      ],
+      "actions_en": [
+        "Complete the day's resistive and aerobic exercise",
+        "Repeat grip strength once a week",
+        "Report dizziness or vision changes"
+      ]
+    },
+    {
+      "id": "ambiente",
+      "letter": "E",
+      "name": "Ambientes fechados e hostis",
+      "nasa": "A nave é um ecossistema fechado. Os factores de habitabilidade incluem temperatura, pressão, iluminação, ruído e a presença de micróbios, que se transmitem mais facilmente num espaço apertado.",
+      "facts": [
+        {
+          "text": "CO₂: limite NASA de 3 mmHg (média de 24 h)",
+          "source": "NASA-STD-3001 Vol. 2",
+          "text_en": "CO₂: NASA limit of 3 mmHg (24 h average)"
+        },
+        {
+          "text": "CO₂ mais alto associado a mais dores de cabeça a bordo da ISS",
+          "source": "Law et al., Aviat. Space Environ. Med. 2014",
+          "text_en": "Higher CO₂ linked to more headaches on board the ISS"
+        }
+      ],
+      "indicators": [
+        "O₂, CO₂, pressão, temperatura e humidade da cabine",
+        "Sintomas registados na triagem (dor de cabeça, irritação, febre)"
+      ],
+      "actions": [
+        "Avisar se a dor de cabeça coincidir com CO₂ alto",
+        "Lavar as mãos e limpar superfícies partilhadas",
+        "Registar a temperatura se houver sintomas"
+      ],
+      "name_en": "Hostile and closed environments",
+      "nasa_en": "The spacecraft is a closed ecosystem. Habitability factors include temperature, pressure, lighting, noise and microbes, which spread more easily in a tight space.",
+      "indicators_en": [
+        "Cabin O₂, CO₂, pressure, temperature and humidity",
+        "Symptoms logged in triage (headache, irritation, fever)"
+      ],
+      "actions_en": [
+        "Report if headache coincides with high CO₂",
+        "Wash hands and clean shared surfaces",
+        "Log temperature if there are symptoms"
+      ]
+    }
+  ],
+  "cabin_limits": {
+    "ppco2_mmHg": {
+      "max": 3.0,
+      "label": "CO₂"
+    },
+    "o2_pct": {
+      "min": 19.5,
+      "max": 23.5,
+      "label": "O₂"
+    },
+    "temp_C": {
+      "min": 18.3,
+      "max": 26.7,
+      "label": "Temperatura"
+    },
+    "rh_pct": {
+      "min": 25,
+      "max": 70,
+      "label": "Humidade"
+    },
+    "pressure_kPa": {
+      "min": 97.9,
+      "max": 102.7,
+      "label": "Pressão"
+    }
+  }
+}

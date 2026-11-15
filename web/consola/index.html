@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt" translate="no">
+<head>
+<meta name="google" content="notranslate"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title data-en-title="ASTRA – Mission console">ASTRA – Consola de missão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/base.css">
+<link rel="stylesheet" href="/assets/css/ui.css">
+<link rel="stylesheet" href="consola.css">
+</head>
+<body>
+
+<!-- ============ ENTRADA ============ -->
+<section id="login" class="login">
+  <div class="lang-float" id="loginLang"></div>
+  <form class="lbox" id="loginForm" autocomplete="on">
+    <span class="brandmark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6.5" fill="currentColor"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(-24 16 16)"/><circle cx="28.4" cy="10.4" r="2.1" fill="#E8A33D"/></svg>ASTRA</span>
+    <p data-en="Mission console">Consola de missão</p>
+    <label><span data-en="Username">Utilizador</span><input id="lUser" name="username" autocomplete="username" required></label>
+    <label><span data-en="Password">Palavra-passe</span><input id="lPass" name="password" type="password" autocomplete="current-password" required></label>
+    <div class="lerr" id="lErr" role="alert"></div>
+    <button class="btn pri" type="submit" data-en="Sign in">Entrar</button>
+  </form>
+</section>
+
+<!-- ============ CONSOLA ============ -->
+<section id="app" class="ui" hidden>
+  <header class="top">
+    <span class="brandmark"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="6.5" fill="currentColor"/><ellipse cx="16" cy="16" rx="14" ry="5.5" fill="none" stroke="currentColor" stroke-width="1.6" transform="rotate(-24 16 16)"/><circle cx="28.4" cy="10.4" r="2.1" fill="#E8A33D"/></svg>ASTRA</span>
+    <span class="sub" data-en="Mission console">Consola de missão</span>
+    <span class="met"><i class="metdot"></i><span class="metl">MET</span><span id="met"></span></span>
+    <span id="tags"></span>
+    <span class="sp"></span>
+    <div class="cabin" id="cabin"></div>
+    <span id="appLang"></span>
+    <div class="who"><span class="whoav">IM</span><span class="whon"><b>Dra. Inês Matola</b><small data-en="Flight surgeon">Cirurgiã de voo</small></span><button class="btn ghost sm" id="logout" data-en="Sign out">Sair</button></div>
+  </header>
+  <div class="cbanner" id="banner"></div>
+
+  <div class="shell">
+    <nav class="side" id="side">
+      <span class="sidecap" data-en="Mission">Missão</span>
+      <button data-view="geral" class="on"><i data-ic="grid"></i><span data-en="Overview">Visão geral</span><span class="nb" id="nbGeral"></span></button>
+      <button data-view="com"><i data-ic="chat"></i><span data-en="Communications">Comunicações</span><span class="nb" id="nbCom"></span></button>
+      <button data-view="amb"><i data-ic="sun"></i><span data-en="Radiation &amp; environment">Radiação e ambiente</span></button>
+      <button data-view="cam"><i data-ic="camera"></i><span data-en="Cameras">Câmaras</span></button>
+      <button data-view="lig"><i data-ic="antenna"></i><span data-en="Link &amp; log">Ligação e registo</span></button>
+      <div class="sidelink" id="sideLink"></div>
+    </nav>
+
+    <main class="views">
+      <!-- Visão geral -->
+      <section class="view" data-v="geral">
+        <div class="vhead"><span class="eyebrow" data-en="Crew status">Estado da tripulação</span><h1 data-en="Overview">Visão geral</h1><p data-en="Each crew member's status as it reached Earth, with the link delay.">Estado de cada tripulante tal como chegou à Terra, com o atraso da ligação.</p><span class="sp"></span><span class="tag live" id="telTag"></span></div>
+        <div class="crew" id="crew"></div>
+        <div class="panel"><h2><i data-ic="alert"></i><span data-en="The five hazards of spaceflight">Os cinco perigos do voo espacial</span><span class="sp"></span><a class="fine" href="https://www.nasa.gov/hrp/hazards" target="_blank" rel="noopener" data-en="Source: NASA Human Research Program">Fonte: NASA Human Research Program</a></h2>
+          <div class="hzt" id="hazards"></div></div>
+        <div class="two">
+          <div class="panel"><h2><i data-ic="clip"></i><span data-en="Guidance to validate">Orientações por validar</span><span class="sp"></span><span class="tag" id="pendTag"></span></h2><div class="list" id="pending"></div></div>
+          <div class="panel"><h2><i data-ic="alert"></i><span data-en="Critical alerts">Alertas críticos</span></h2><div class="list" id="alerts"></div></div>
+        </div>
+      </section>
+
+      <!-- Comunicações -->
+      <section class="view" data-v="com" hidden>
+        <div class="vhead"><span class="eyebrow" data-en="Ship ↔ Earth">Nave ↔ Terra</span><h1 data-en="Communications">Comunicações</h1><p data-en="Talk with the crew. Each message takes the link delay in each direction.">Conversa com a tripulação. Cada mensagem demora o atraso da ligação em cada sentido.</p></div>
+        <div class="two">
+          <div class="panel"><h2><i data-ic="chat"></i><span data-en="Messages from the crew">Mensagens da tripulação</span><span class="sp"></span><span class="tag" id="inboxTag"></span></h2><div class="list" id="inbox"></div></div>
+          <div class="panel">
+            <h2><i data-ic="send"></i><span data-en="Send instruction">Enviar instrução</span></h2>
+            <form class="form" id="compose">
+              <label><span data-en="To">Para</span><select id="cTo"></select></label>
+              <label><span data-en="Priority">Prioridade</span><div class="seg" id="cPrio"><button type="button" data-p="normal" class="on" data-en="Normal">Normal</button><button type="button" data-p="urgente" data-en="Urgent">Urgente</button></div></label>
+              <div><div class="fine" style="margin-bottom:8px" data-en="Templates">Modelos</div><div class="tpl" id="tpls"></div></div>
+              <label><span data-en="Message">Mensagem</span><textarea id="cText" rows="5" placeholder="Escreva a instrução" data-en-ph="Write the instruction"></textarea></label>
+              <div class="row"><span class="fine" id="cEta"></span><span class="sp"></span><button class="btn pri" type="submit"><i data-ic="send"></i><span data-en="Send to the ship">Enviar para a nave</span></button></div>
+            </form>
+          </div>
+        </div>
+        <div class="panel"><h2><i data-ic="send"></i><span data-en="Instructions sent">Instruções enviadas</span></h2><div class="list" id="sent"></div></div>
+      </section>
+
+      <!-- Radiação e ambiente -->
+      <section class="view" data-v="amb" hidden>
+        <div class="vhead"><span class="eyebrow" data-en="Space weather · cabin">Clima espacial · cabine</span><h1 data-en="Radiation &amp; environment">Radiação e ambiente</h1><p data-en="Real space weather (NASA DONKI and NOAA GOES) and cabin environment.">Clima espacial real (NASA DONKI e NOAA GOES) e ambiente da cabine.</p></div>
+        <div class="two">
+          <div class="panel" id="pSpace"></div>
+          <div class="panel"><h2><i data-ic="wind"></i><span data-en="Cabin environment">Ambiente da cabine</span></h2><div id="cabinPanel"></div></div>
+        </div>
+        <div class="panel"><h2><i data-ic="radiation"></i><span data-en="Dose per crew member">Dose por tripulante</span></h2><div id="dosePanel"></div></div>
+      </section>
+
+      <!-- Câmaras -->
+      <section class="view" data-v="cam" hidden>
+        <div class="vhead"><span class="eyebrow" data-en="Video feeds">Vídeo</span><h1 data-en="Ship cameras">Câmaras da nave</h1><p data-en="Real photographs from the NASA Image and Video Library and the EPIC camera (DSCOVR).">Fotografias reais da NASA Image and Video Library e da câmara EPIC (DSCOVR).</p><span class="sp"></span><span class="tag live" id="camTag"></span></div>
+        <div class="cams" id="cams"></div>
+      </section>
+
+      <!-- Ligação e registo -->
+      <section class="view" data-v="lig" hidden>
+        <div class="vhead"><span class="eyebrow" data-en="Deep-space link">Ligação de espaço profundo</span><h1 data-en="Link &amp; log">Ligação e registo</h1><p data-en="Distance, delay, packet queue and everything that happened. Nothing is deleted.">Distância, atraso, fila de pacotes e tudo o que aconteceu. Nada se apaga.</p></div>
+        <div class="two">
+          <div class="panel" id="pLink"></div>
+          <div class="panel"><h2><i data-ic="queue"></i><span data-en="Ship ↔ Earth queue">Fila entre a nave e a Terra</span><span class="sp"></span><span class="tag" id="qTag"></span></h2><div class="q" id="queue"></div></div>
+        </div>
+        <div class="panel"><h2><i data-ic="log"></i><span data-en="Event log">Registo de eventos</span></h2><div class="log" id="log"></div></div>
+      </section>
+    </main>
+  </div>
+</section>
+
+<div class="modal ui" id="modal"><div class="mbox" id="mbox"></div></div>
+<script src="/assets/js/i18n.js"></script>
+<script src="/assets/js/common.js"></script>
+<script src="/assets/js/starfield.js"></script>
+<script src="consola.js"></script>
+</body>
+</html>

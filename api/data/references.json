@@ -1,0 +1,16 @@
+{
+  "_note": "Valores de referência usados pelo protótipo, com a fonte pública de cada um.",
+  "items": [
+    {"id": "gcr_mars", "text": "Dose de raios cósmicos no cruzeiro Terra–Marte: 1,84 mSv/dia", "source": "Zeitlin et al., Science 340 (2013) 1080 — MSL/RAD"},
+    {"id": "gcr_iss", "text": "Dose a bordo da ISS: cerca de 0,3–0,8 mSv/dia", "source": "NASA Human Research Program — Space Radiation"},
+    {"id": "career", "text": "Limite de carreira de dose efectiva: 600 mSv", "source": "NASA-STD-3001 Vol. 1 (2022)"},
+    {"id": "s_scale", "text": "Tempestade de radiação solar S1–S5: protões ≥10 MeV acima de 10, 100, 1000, 10 000, 100 000 pfu", "source": "NOAA SWPC — Space Weather Scales"},
+    {"id": "bone", "text": "Perda óssea em microgravidade: 1–1,5 % por mês nos ossos que suportam peso", "source": "NASA HRP — Risk of Early Onset Osteoporosis"},
+    {"id": "co2", "text": "CO₂ na cabine: limite NASA de 3 mmHg (média de 24 h); valores típicos na ISS 2–4 mmHg", "source": "NASA-STD-3001 Vol. 2"},
+    {"id": "hr", "text": "Frequência cardíaca de repouso em adultos: 60–100 bpm (atletas podem ter 40–60)", "source": "American Heart Association"},
+    {"id": "bp", "text": "Tensão arterial normal: < 120/80 mmHg", "source": "American Heart Association"},
+    {"id": "spo2", "text": "Saturação de oxigénio normal: 95–100 %", "source": "Valores clínicos de referência"},
+    {"id": "glucose", "text": "Glicemia em jejum normal: 70–99 mg/dL", "source": "American Diabetes Association"},
+    {"id": "delay", "text": "Atraso de comunicação Terra–Marte: 4 a 24 min em cada sentido", "source": "Documentação ASTRA, secção 1"}
+  ]
+}

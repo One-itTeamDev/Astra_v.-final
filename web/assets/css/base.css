@@ -1,0 +1,97 @@
+/* ASTRA — estilo de instrumento médico de bordo: claro, sóbrio, legível.
+   Uma só família (Public Sans), números alinhados, cor só para estado. */
+:root{
+  /* tema escuro: azul-noite com texto quente, cor só para estado */
+  --paper:#0F1826;      /* fundo da aplicação */
+  --sheet:#162236;      /* superfícies */
+  --ink:#E4E8EE;        /* texto */
+  --head:#F4F6F9;       /* títulos e números grandes */
+  --muted:#93A1B5;      /* texto secundário */
+  --rule:#26354D;       /* linhas */
+  --blue:#8FB3E8;       /* ligações e foco */
+  --ok:#5CC08A; --warn:#F0B44C; --crit:#F0675A;
+  --monitor:#09111B;    /* ecrãs de sinal, como num monitor clínico */
+  --trace:#62D394;      /* traçado no monitor */
+  --navy:#0B1320;       /* barras */
+  --display:'Barlow Semi Condensed','Public Sans',sans-serif;
+  --r:8px;
+  --sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --surface:var(--paper);--raised:var(--sheet);--raised2:#1C2A40;--line:var(--rule);--sinal:var(--blue);
+  --mono:var(--sans);--pulso:var(--blue);--cabine:#22324B;
+  --ok-soft:rgba(92,192,138,.12);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.55 var(--sans);font-variant-numeric:tabular-nums}
+button{font:inherit;color:inherit;cursor:pointer}
+input,select,textarea{font:inherit;color:var(--ink);background:var(--sheet);border:1px solid #34455F;border-radius:4px;padding:9px 11px;width:100%}
+textarea{resize:vertical}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--blue);outline-offset:1px}
+a{color:var(--blue)}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:.005em}
+.num{font-family:var(--display);font-weight:600}
+.starfield{position:absolute;inset:0;z-index:0;pointer-events:none;display:block}
+.brandmark{display:inline-flex;align-items:center;gap:10px;font:700 22px/1 var(--display);letter-spacing:.14em}
+.brandmark svg{width:30px;height:30px}
+.mono{font-variant-numeric:tabular-nums}
+.muted{color:var(--muted)}.fine{font-size:14px;color:var(--muted)}
+.ok{color:var(--ok)}.warn{color:var(--warn)}.crit{color:var(--crit)}
+.row{display:flex;gap:10px;align-items:center}.sp{flex:1}
+.hr{height:1px;background:var(--rule);margin:14px 0}
+.card{background:var(--sheet);border:1px solid var(--rule);border-radius:var(--r);padding:16px}
+.btn{border:1px solid #34455F;background:var(--sheet);border-radius:6px;padding:9px 16px;min-height:40px;font-size:15px;white-space:nowrap}
+.btn:hover{background:#1F2E46}
+.btn.pri{background:var(--ink);border-color:var(--ink);color:#0F1826;font-weight:600}
+.btn.pri:hover{background:#fff}
+.btn.warnb{background:var(--warn);border-color:var(--warn);color:#1A1205;font-weight:600}
+.btn.critb{background:var(--crit);border-color:var(--crit);color:#1A0805;font-weight:600}
+.btn.ghost{background:transparent;border-color:transparent;color:var(--blue)}
+.btn.ghost:hover{background:#22324B}
+.btn.sm{min-height:34px;padding:5px 12px;font-size:14px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:13px;padding:2px 8px;border-radius:3px;background:#22324B;color:var(--muted);white-space:nowrap}
+.tag.live{background:rgba(143,179,232,.15);color:var(--blue)}
+.tag.ok{background:rgba(92,192,138,.14);color:var(--ok)}
+.tag.warn{background:rgba(240,180,76,.14);color:var(--warn)}
+.tag.crit{background:rgba(240,103,90,.16);color:var(--crit)}
+.lvl{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.lvl::before{content:"";width:9px;height:9px;border-radius:2px;background:currentColor}
+.prov{display:inline-block;font-size:12px;background:rgba(240,180,76,.14);color:var(--warn);border-radius:3px;padding:1px 7px}
+.valid{display:inline-block;font-size:12px;background:rgba(92,192,138,.14);color:var(--ok);border-radius:3px;padding:1px 7px}
+.av{min-width:44px;height:28px;padding:0 6px;border-radius:4px;display:grid;place-items:center;font:600 13px var(--display);color:var(--c);background:color-mix(in srgb,var(--c) 18%,transparent);border:1px solid color-mix(in srgb,var(--c) 55%,transparent);flex:none;letter-spacing:.02em}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:7px 18px;font-size:15px}
+.kv b{font-weight:500}
+.seg{display:flex;border:1px solid #34455F;border-radius:4px;overflow:hidden}
+.seg button{flex:1;border:0;border-right:1px solid #34455F;background:var(--sheet);padding:7px 6px;font-size:13px;color:var(--ink)}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--ink);color:#0F1826;font-weight:600}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--rule)}
+.tabs button{border:0;border-bottom:2px solid transparent;background:none;padding:7px 14px;font-size:14px;color:var(--muted);margin-bottom:-1px}
+.tabs button.on{border-bottom-color:var(--blue);color:var(--ink);font-weight:600}
+.quote{border-left:3px solid var(--rule);padding:4px 12px;margin:6px 0;color:var(--ink)}
+.empty{color:var(--muted);font-size:14px;padding:12px 0}
+.toasts{position:fixed;right:16px;bottom:16px;z-index:200;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.toast{background:#22324B;color:var(--ink);border:1px solid #34455F;border-radius:4px;padding:10px 14px;font-size:14px;max-width:360px;box-shadow:0 4px 14px rgba(20,30,35,.25)}
+.toast.warn{background:#4A3510;border-color:#7A5A1E}.toast.crit{background:#5A1A14;border-color:#8E2A20}
+.modal{position:fixed;inset:0;z-index:150;background:rgba(3,7,12,.7);display:none;align-items:center;justify-content:center;padding:20px}
+.modal.show{display:flex}
+.mbox{background:var(--sheet);border:1px solid var(--rule);border-radius:10px;max-width:1060px;width:100%;max-height:92vh;overflow:auto;padding:24px}
+.xbtn{border:0;background:none;font-size:20px;width:34px;height:34px;color:var(--muted);flex:none}
+svg.chart{width:100%;height:auto;display:block}
+.dots{display:inline-flex;gap:4px}.dots i{width:6px;height:6px;border-radius:50%;background:var(--blue);animation:blink 1s infinite}
+.dots i:nth-child(2){animation-delay:.2s}.dots i:nth-child(3){animation-delay:.4s}
+@keyframes blink{50%{opacity:.25}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+/* números grandes na letra de títulos */
+.tile .val,.live .hrv,.bigdelay,.gauge,.readout .big,.stepper .v,.dev .out,.res .v{font-family:var(--display)}
+/* ícones e animações discretas */
+.ico{width:18px;height:18px;flex:none;vertical-align:-3px}
+.beat{display:inline-grid;place-items:center;color:var(--crit)}
+.beat .ico{fill:currentColor;fill-opacity:.25;animation:beat var(--bt,1s) var(--bd,0s) infinite;transform-origin:center}
+@keyframes beat{0%{transform:scale(1)}12%{transform:scale(1.25)}24%{transform:scale(1)}36%{transform:scale(1.12)}60%,100%{transform:scale(1)}}
+.ldot.on{animation:ping 2.4s infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(92,192,138,.55)}70%{box-shadow:0 0 0 7px rgba(92,192,138,0)}100%{box-shadow:0 0 0 0 rgba(92,192,138,0)}}
+.spin{animation:spin 6s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.glow{animation:glow 1.6s ease-in-out infinite alternate}@keyframes glow{to{opacity:.45}}
+h2 .ico,h3 .ico{width:20px;height:20px;color:var(--blue);margin-right:2px}

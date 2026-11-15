@@ -1,0 +1,31 @@
+{
+  "version": "regras v1, sem revisão clínica",
+  "note": "Lista de sinais de perigo (secção 6). As regras só sobem a prioridade, nunca a baixam, e a IA não as consegue desligar.",
+  "danger": [
+    {"id": "R-01", "name": "dor no peito", "pattern": "dor no peito|aperto no peito|peito (a)?pertado|dor tor[aá]cica"},
+    {"id": "R-02", "name": "falta de ar", "pattern": "falta de ar|n[aã]o consigo respirar|sufoc|dificuldade (em|a) respirar"},
+    {"id": "R-03", "name": "perda de visão", "pattern": "perd(i|a) (de |a )?vis|n[aã]o vejo|ceg(o|a|ueira)"},
+    {"id": "R-04", "name": "confusão", "pattern": "confus|desorient"},
+    {"id": "R-05", "name": "desmaio", "pattern": "desmai|perdi os sentidos|perda de consci"}
+  ],
+  "vital_rules": [
+    {"id": "R-10", "name": "coração muito acima da linha de base", "indicator": "heart_rate", "factor_above": 1.6},
+    {"id": "R-11", "name": "coração muito abaixo da linha de base", "indicator": "heart_rate", "factor_below": 0.6}
+  ],
+  "symptoms": [
+    ["dor de cabe|cabe[çc]a", "Dor de cabeça", "Beba água devagar ao longo da próxima hora"],
+    ["desfocad|vis[ãa]o|vista", "Visão alterada", "Descanse a vista 20 min longe de ecrãs e registe se piora"],
+    ["enjo|n[áa]usea|v[óo]mit", "Náusea", "Evite movimentos bruscos da cabeça; coma pouco e devagar"],
+    ["tont|vertig", "Tonturas", "Fique preso a um apoio e mova-se devagar"],
+    ["cansa|fadiga|exaust", "Cansaço", "Faça uma pausa de 20 min antes da próxima tarefa"],
+    ["dorm|ins[óo]nia|sono", "Sono fraco", "Reduza a luz azul 1 h antes de dormir"],
+    ["costa|lombar|coluna", "Dor lombar", "Faça os alongamentos da coluna do protocolo diário"],
+    ["congest|nariz|seios", "Congestão nasal", "Hidrate-se; é comum com os fluidos a subir para a cabeça"],
+    ["ansie|trist|sozinh|irrit|stress", "Humor em baixo", "Fale com alguém da tripulação ou peça uma conversa privada"],
+    ["febre|calafri", "Sensação de febre", "Meça a temperatura e registe-a"],
+    ["m[úu]scul|perna|bra[çc]o", "Dor muscular", "Aqueça antes do ARED e reduza a carga hoje"],
+    ["pele|comich", "Irritação da pele", "Mantenha a zona limpa e seca"],
+    ["peito", "Dor no peito", ""],
+    ["falta de ar|respirar", "Falta de ar", ""]
+  ]
+}
