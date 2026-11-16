@@ -95,10 +95,13 @@ VIEWS.login = () => `<div class="login"><div class="l"><span class="brandmark"><
   <p class="muted">${L('Funciona mesmo quando a ligação à Terra cai: as medições, a triagem e os alertas correm no computador da nave.', 'Works even when the link to Earth drops: measurements, triage and alerts run on the ship computer.')}</p>
 </div>
   <div class="pick">${S.crew.map(c => `<button data-act="pick" data-id="${c.id}"><span class="av" style="--c:${c.color}">${c.code}</span><span><b>${esc(c.name)}</b><small>${esc(tr(c.role))}</small></span></button>`).join('') || `<div class="empty">${L('A ligar ao servidor de bordo…', 'Connecting to the ship server…')}</div>`}</div></div>`;
+// Demo only: the PINs from README so judges can sign in.
+const DEMO_PIN = { CDR: '4821', FE: '3057', MS: '7314', GEO: '6290' };
 VIEWS.pin = () => {
   const c = S.crew.find(x => x.id === S.pinPick);
   return `<div class="pin"><div style="text-align:center"><span class="av" style="--c:${c.color};margin:0 auto;width:64px;height:64px;font-size:18px">${c.code}</span>
   <h2 style="margin:12px 0 2px">${esc(c.name)}</h2><div class="muted">${L('Escreva o seu PIN de 4 dígitos', 'Enter your 4-digit PIN')}</div>
+  <div class="fine">${L('PIN de demonstração', 'Demo PIN')}: <b>${DEMO_PIN[c.code] || '—'}</b></div>
   <div class="pdots" id="pdots">${[0, 1, 2, 3].map(i => `<i class="${i < S.pin.length ? 'f' : ''}"></i>`).join('')}</div>
   <div class="fine" id="pinmsg">&nbsp;</div><button class="btn ghost sm" data-act="pinback" style="margin-top:12px">← ${L('Voltar', 'Back')}</button></div>
   <div class="keys">${[1, 2, 3, 4, 5, 6, 7, 8, 9, '', 0, '⌫'].map(k => k === '' ? '<span></span>' : `<button data-act="key" data-k="${k}">${k}</button>`).join('')}</div></div>`;
@@ -439,6 +442,17 @@ function urgent(m) {
    <p style="font-size:16px">${esc(m.text)}</p><div class="row"><span class="sp"></span><button class="btn" data-act="later" data-id="${m.id}">${L('Mais tarde', 'Later')}</button><button class="btn warnb" data-act="ack" data-id="${m.id}">${L('Confirmar que li', 'Acknowledge')}</button></div></div>`;
 }
 
+// Demo: types the crew member's PIN key by key, then the 4th key signs in.
+async function autoPin(id) {
+  const pin = DEMO_PIN[S.crew.find(x => x.id === id)?.code]; if (!pin) return;
+  for (const d of pin) {
+    await new Promise(r => setTimeout(r, 450));
+    if (S.pinPick !== id) return; // user went back
+    const k = screen.querySelector(`.keys [data-k="${d}"]`); if (!k) return;
+    k.classList.add('hit'); await new Promise(r => setTimeout(r, 180)); k.click();
+  }
+}
+
 /* ---------- eventos ---------- */
 screen.addEventListener('click', async e => {
   if (e.target.closest('#rArea')) { reactTap(); return; }
@@ -446,7 +460,7 @@ screen.addEventListener('click', async e => {
   const a = b.dataset.act;
   try {
     switch (a) {
-      case 'pick': S.pinPick = +b.dataset.id; S.pin = ''; render(); break;
+      case 'pick': S.pinPick = +b.dataset.id; S.pin = ''; render(); autoPin(S.pinPick); break;
       case 'pinback': S.pinPick = null; render(); break;
       case 'key': {
         const k = b.dataset.k; if (k === '⌫') S.pin = S.pin.slice(0, -1); else if (S.pin.length < 4) S.pin += k; render();

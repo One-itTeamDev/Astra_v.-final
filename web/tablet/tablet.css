@@ -62,6 +62,7 @@ body{background:radial-gradient(ellipse at 50% 40%,#141F31,#070C14 75%)}
 .keys{display:grid;grid-template-columns:repeat(3,80px);gap:10px}
 .keys button{height:62px;border-radius:6px;border:1px solid var(--rule);background:var(--sheet);font-size:22px;font-weight:500}
 .keys button:hover{background:#1F2E46}
+.keys button.hit{background:var(--ink);color:var(--sheet);transform:scale(.94);transition:.12s}
 /* monitor de sinais: a única superfície escura, como num equipamento clínico */
 .steps{display:flex;gap:6px;margin:12px 0 18px}
 .steps span{flex:1;height:4px;border-radius:2px;background:var(--rule)}

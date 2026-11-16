@@ -13,7 +13,17 @@ const TPL = () => [
 ];
 
 /* ---------- login ---------- */
-function showLogin() { $('#login').hidden = false; $('#app').hidden = true; $('#lUser').focus(); }
+function showLogin() { $('#login').hidden = false; $('#app').hidden = true; $('#lUser').focus(); autoLogin(); }
+// Demo: types the demo credentials letter by letter, then signs in.
+async function autoLogin() {
+  const wait = ms => new Promise(r => setTimeout(r, ms));
+  for (const [el, txt] of [[$('#lUser'), 'cirurgia'], [$('#lPass'), 'astra2026']]) {
+    el.value = ''; el.focus();
+    for (const ch of txt) { await wait(110); if ($('#login').hidden) return; el.value += ch; }
+    await wait(300);
+  }
+  $('#loginForm').requestSubmit();
+}
 
 $('#loginForm').addEventListener('submit', async e => {
   e.preventDefault(); $('#lErr').textContent = '';

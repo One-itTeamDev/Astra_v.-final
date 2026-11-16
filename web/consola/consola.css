@@ -5,6 +5,7 @@
 .lbox .btn{min-height:44px;font-size:15px;margin-top:4px}
 .lbox p{margin:-4px 0 8px;color:var(--muted)}
 .lbox label{font-size:14px;display:flex;flex-direction:column;gap:5px}
+.lbox p.demo{margin:0;padding:10px 12px;border:1px dashed #E8A33D;border-radius:8px;color:var(--head);font-size:14px;text-align:center}
 .lerr{color:var(--crit);font-size:14px;min-height:20px}
 
 /* ============ consola (v2) ============ */
